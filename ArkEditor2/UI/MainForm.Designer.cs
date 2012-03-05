@@ -140,6 +140,7 @@
             this.mainRibbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.mainRibbon.Size = new System.Drawing.Size(1014, 147);
             this.mainRibbon.StatusBar = this.ribbonStatusBar;
+            this.mainRibbon.Merge += new DevExpress.XtraBars.Ribbon.RibbonMergeEventHandler(this.MainRibbon_Merge);
             // 
             // ribbonImageCollection
             // 
@@ -212,6 +213,7 @@
             this.iConfig.ImageIndex = 0;
             this.iConfig.LargeImageIndex = 0;
             this.iConfig.Name = "iConfig";
+            this.iConfig.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Config_ItemClick);
             // 
             // iAbout
             // 
@@ -239,6 +241,7 @@
             this.iRevisionLog.ImageIndex = 7;
             this.iRevisionLog.LargeImageIndex = 7;
             this.iRevisionLog.Name = "iRevisionLog";
+            this.iRevisionLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RevisionLog_ItemClick);
             // 
             // iExit
             // 
@@ -343,6 +346,7 @@
             this.iStartPage.ImageIndex = 21;
             this.iStartPage.LargeImageIndex = 21;
             this.iStartPage.Name = "iStartPage";
+            this.iStartPage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Start_ItemClick);
             // 
             // iMudoles
             // 
@@ -370,6 +374,7 @@
             this.moduleGallery.Gallery.ShowItemText = true;
             this.moduleGallery.Name = "moduleGallery";
             this.moduleGallery.Ribbon = this.mainRibbon;
+            this.moduleGallery.GalleryItemClick += new DevExpress.XtraBars.Ribbon.GalleryItemClickEventHandler(this.Module_GalleryItemClick);
             // 
             // iTools
             // 
@@ -594,7 +599,6 @@
             // 
             // MainForm
             // 
-            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 679);

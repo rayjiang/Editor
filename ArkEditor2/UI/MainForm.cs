@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraBars;
+using DevExpress.XtraBars.Docking;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Helpers;
 using DevExpress.XtraBars.Docking2010.Views;
@@ -15,6 +16,10 @@ namespace ArkEditor2.UI
 {
     public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private BaseDocument m_startPage;
+        private BaseDocument m_config;
+        private BaseDocument m_revisionLog;
+
         public MainForm()
         {
             InitializeComponent();
@@ -34,6 +39,9 @@ namespace ArkEditor2.UI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // Merge Style
+            this.mainRibbon.MdiMergeStyle = RibbonMdiMergeStyle.Always;
+
             // Init Gallery
             InitModuleGallery(moduleGallery.Gallery.Groups[0]);
             InitToolsGallery(toolGallery.Gallery.Groups[0]);
@@ -41,23 +49,12 @@ namespace ArkEditor2.UI
             // Init Tabbed View
             tabbedView.BeginUpdate();
 
-            // Add start page
-            BaseDocument startPage = tabbedView.Controller.AddDocument(new StartPage());
-            startPage.Form.Text = "Start";
-            startPage.Caption = "Start";
-            startPage.Image = ribbonImageCollection.Images[21];
+            // Add document
+            AddStartPageDocument();
+            //AddConfigDocument();
+            //AddRevisionLogDocument();
 
-            BaseDocument configPage = tabbedView.Controller.AddDocument(new Config());
-            configPage.Form.Text = "Config";
-            configPage.Caption = "Config";
-            configPage.Image = ribbonImageCollection.Images[0];
-
-            BaseDocument revisionPage = tabbedView.Controller.AddDocument(new RevisionLog());
-            revisionPage.Form.Text = "Revision Log";
-            revisionPage.Caption = "Revision Log";
-            revisionPage.Image = ribbonImageCollection.Images[7];
-
-            tabbedView.Controller.Activate(startPage);
+            tabbedView.Controller.Activate(m_startPage);
             tabbedView.EndUpdate();
         }
 
@@ -94,5 +91,80 @@ namespace ArkEditor2.UI
                 groupDropDown.Items.Add(item);
             }
         }
+
+        private void AddStartPageDocument()
+        {
+            m_startPage = tabbedView.Controller.AddDocument(new StartPage());
+            m_startPage.Form.Text = "Start";
+            m_startPage.Caption = "Start";
+            m_startPage.Image = ribbonImageCollection.Images[21];
+
+        }
+        private void AddConfigDocument()
+        {
+            m_config = tabbedView.Controller.AddDocument(new Config());
+            m_config.Form.Text = "Config";
+            m_config.Caption = "Config";
+            m_config.Image = ribbonImageCollection.Images[0];
+        }
+        private void AddRevisionLogDocument()
+        {
+            m_revisionLog = tabbedView.Controller.AddDocument(new RevisionLog());
+            m_revisionLog.Form.Text = "Revision Log";
+            m_revisionLog.Caption = "Revision Log";
+            m_revisionLog.Image = ribbonImageCollection.Images[7];
+        }
+
+        private void Start_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tabbedView.Documents.Contains(m_startPage))
+            {
+                tabbedView.Controller.Activate(m_startPage);
+            }
+            else
+            {
+                AddStartPageDocument();
+            }
+        }
+        private void Config_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tabbedView.Documents.Contains(m_config))
+            {
+                tabbedView.Controller.Activate(m_config);
+            }
+            else
+            {
+                AddConfigDocument();
+            }
+        }
+
+        private void RevisionLog_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tabbedView.Documents.Contains(m_revisionLog))
+            {
+                tabbedView.Controller.Activate(m_revisionLog);
+            }
+            else
+            {
+                AddRevisionLogDocument();
+            }
+        }
+
+        private void Module_GalleryItemClick(object sender, GalleryItemClickEventArgs e)
+        {
+            SceneEditor sceneEditor = new SceneEditor();
+            sceneEditor.DockToMainForm(dockManager);
+            sceneEditor.Text = "Scene Editor";
+            sceneEditor.MdiParent = this;
+            sceneEditor.Show();
+        }
+
+        private void MainRibbon_Merge(object sender, RibbonMergeEventArgs e)
+        {
+            RibbonControl main = sender as RibbonControl;
+            if (e.MergedChild.Pages.Count > 0)
+                main.SelectedPage = e.MergedChild.Pages[0];
+        }
+
     }
 }

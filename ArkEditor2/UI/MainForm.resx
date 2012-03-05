@@ -133,16 +133,16 @@
 </value>
   </data>
   <metadata name="moduleGallery.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>871, 17</value>
+    <value>182, 56</value>
   </metadata>
   <metadata name="moduleGallery.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>871, 17</value>
+    <value>182, 56</value>
   </metadata>
   <metadata name="toolGallery.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>320, 56</value>
   </metadata>
   <metadata name="toolGallery.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>320, 56</value>
   </metadata>
   <metadata name="ribbonLargeImageCollection.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>486, 17</value>
@@ -162,7 +162,7 @@
     <value>198, 17</value>
   </metadata>
   <metadata name="documentManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>706, 17</value>
+    <value>17, 56</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>96</value>
@@ -6341,6 +6341,6 @@
 </value>
   </data>
   <metadata name="dockManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>133, 56</value>
+    <value>436, 56</value>
   </metadata>
 </root>

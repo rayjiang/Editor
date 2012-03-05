@@ -46,6 +46,8 @@
     <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,11 +62,29 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\ObjectProperty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ObjectProperty.Designer.cs">
+      <DependentUpon>ObjectProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\RevisionLog.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\RevisionLog.Designer.cs">
       <DependentUpon>RevisionLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SceneEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SceneEditor.Designer.cs">
+      <DependentUpon>SceneEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SceneExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SceneExplorer.Designer.cs">
+      <DependentUpon>SceneExplorer.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\StartupSplashScreen.cs">
       <SubType>Form</SubType>
@@ -104,8 +124,17 @@
     <EmbeddedResource Include="UI\Config.resx">
       <DependentUpon>Config.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\ObjectProperty.resx">
+      <DependentUpon>ObjectProperty.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\RevisionLog.resx">
       <DependentUpon>RevisionLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SceneEditor.resx">
+      <DependentUpon>SceneEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SceneExplorer.resx">
+      <DependentUpon>SceneExplorer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\StartupSplashScreen.resx">
       <DependentUpon>StartupSplashScreen.cs</DependentUpon>
