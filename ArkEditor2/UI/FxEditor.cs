@@ -20,5 +20,13 @@ namespace ArkEditor2.UI
         {
             this.Close();
         }
+
+        private void FxEditor_Load(object sender, EventArgs e)
+        {
+            // workaround for maximized RibbonForm
+            dockManager.ForceInitialize();
+            mainRibbon.ForceInitialize();
+            mainRibbon.Manager.DockManager = dockManager;
+        }
     }
 }

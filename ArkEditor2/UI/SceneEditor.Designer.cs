@@ -186,7 +186,7 @@
             // 
             // barButtonItem2
             // 
-            this.barButtonItem2.Caption = "&Open...";
+            this.barButtonItem2.Caption = "&Open";
             this.barButtonItem2.Id = 5;
             this.barButtonItem2.ImageIndex = 22;
             this.barButtonItem2.LargeImageIndex = 22;
@@ -218,25 +218,25 @@
             // 
             // barButtonItem6
             // 
-            this.barButtonItem6.Caption = "Save as...";
+            this.barButtonItem6.Caption = "Save as";
             this.barButtonItem6.Id = 9;
-            this.barButtonItem6.ImageIndex = 15;
-            this.barButtonItem6.LargeImageIndex = 15;
+            this.barButtonItem6.ImageIndex = 19;
+            this.barButtonItem6.LargeImageIndex = 19;
             this.barButtonItem6.Name = "barButtonItem6";
             this.barButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             // 
             // barButtonItem7
             // 
-            this.barButtonItem7.Caption = "Save Asset...";
+            this.barButtonItem7.Caption = "Save asset";
             this.barButtonItem7.Id = 10;
-            this.barButtonItem7.ImageIndex = 19;
-            this.barButtonItem7.LargeImageIndex = 19;
+            this.barButtonItem7.ImageIndex = 15;
+            this.barButtonItem7.LargeImageIndex = 15;
             this.barButtonItem7.Name = "barButtonItem7";
             this.barButtonItem7.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             // 
             // barButtonItem8
             // 
-            this.barButtonItem8.Caption = "Export...";
+            this.barButtonItem8.Caption = "Export";
             this.barButtonItem8.Id = 11;
             this.barButtonItem8.ImageIndex = 21;
             this.barButtonItem8.LargeImageIndex = 21;

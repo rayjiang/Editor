@@ -189,7 +189,6 @@ namespace ArkEditor2.UI
                 if (m_fxEditor == null || m_fxEditor.IsDisposed)
                 {
                     SplashScreenManager.ShowForm(typeof(ModuleWaitForm));
-                    System.Threading.Thread.Sleep(500);
 
                     m_fxEditor = new FxEditor();
                     m_fxEditor.Text = "Fx Editor";
@@ -208,7 +207,6 @@ namespace ArkEditor2.UI
                 if (m_sceneWalker == null || m_sceneWalker.IsDisposed)
                 {
                     SplashScreenManager.ShowForm(typeof(ModuleWaitForm));
-                    System.Threading.Thread.Sleep(500);
 
                     m_sceneWalker = new SceneWalker();
                     m_sceneWalker.Text = "Scene Walker";

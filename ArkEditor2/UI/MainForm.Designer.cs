@@ -78,6 +78,8 @@
             this.dpOutput = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleGallery)).BeginInit();
@@ -94,6 +96,7 @@
             this.dpOutput.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
+            this.dockPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainRibbon
@@ -147,6 +150,10 @@
             this.mainRibbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.mainRibbon.Size = new System.Drawing.Size(1014, 147);
             this.mainRibbon.StatusBar = this.ribbonStatusBar;
+            this.mainRibbon.Toolbar.ItemLinks.Add(this.iMudoles);
+            this.mainRibbon.Toolbar.ItemLinks.Add(this.iTools);
+            this.mainRibbon.Toolbar.ItemLinks.Add(this.iConfig, true);
+            this.mainRibbon.TransparentEditors = true;
             this.mainRibbon.Merge += new DevExpress.XtraBars.Ribbon.RibbonMergeEventHandler(this.MainRibbon_Merge);
             this.mainRibbon.UnMerge += new DevExpress.XtraBars.Ribbon.RibbonMergeEventHandler(this.MainRibbon_UnMerge);
             // 
@@ -429,6 +436,7 @@
             // repositoryItemProgressBar1
             // 
             this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
+            this.repositoryItemProgressBar1.UseParentBackground = true;
             // 
             // ribbonLargeImageCollection
             // 
@@ -593,9 +601,11 @@
             // dockManager
             // 
             this.dockManager.Form = this;
+            this.dockManager.HiddenPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dpOutput});
             this.dockManager.Images = this.ribbonImageCollection;
             this.dockManager.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dpOutput});
+            this.dockPanel1});
             this.dockManager.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -612,8 +622,11 @@
             this.dpOutput.Location = new System.Drawing.Point(0, 448);
             this.dpOutput.Name = "dpOutput";
             this.dpOutput.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dpOutput.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.dpOutput.SavedIndex = 0;
             this.dpOutput.Size = new System.Drawing.Size(1014, 200);
             this.dpOutput.Text = "Output";
+            this.dpOutput.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
             // 
             // dockPanel1_Container
             // 
@@ -632,12 +645,31 @@
             this.memoEdit1.Size = new System.Drawing.Size(1006, 173);
             this.memoEdit1.TabIndex = 0;
             // 
+            // dockPanel1
+            // 
+            this.dockPanel1.Controls.Add(this.controlContainer1);
+            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.dockPanel1.ID = new System.Guid("09b4f4f7-20ab-4ba9-83e6-04a917fb98ef");
+            this.dockPanel1.ImageIndex = 19;
+            this.dockPanel1.Location = new System.Drawing.Point(0, 455);
+            this.dockPanel1.Name = "dockPanel1";
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 193);
+            this.dockPanel1.Size = new System.Drawing.Size(1014, 193);
+            this.dockPanel1.Text = "Output";
+            // 
+            // controlContainer1
+            // 
+            this.controlContainer1.Location = new System.Drawing.Point(4, 23);
+            this.controlContainer1.Name = "controlContainer1";
+            this.controlContainer1.Size = new System.Drawing.Size(1006, 166);
+            this.controlContainer1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 679);
-            this.Controls.Add(this.dpOutput);
+            this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.mainRibbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -664,6 +696,7 @@
             this.dpOutput.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
+            this.dockPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -715,5 +748,7 @@
         private DevExpress.XtraBars.BarStaticItem sInfo;
         private DevExpress.XtraBars.BarEditItem progressItem;
         private DevExpress.XtraEditors.Repository.RepositoryItemProgressBar repositoryItemProgressBar1;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.ControlContainer controlContainer1;
     }
 }

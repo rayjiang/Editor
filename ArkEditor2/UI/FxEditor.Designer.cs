@@ -28,33 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FxEditor));
-            this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.mainRibbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.smallImages = new DevExpress.Utils.ImageCollection(this.components);
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.iExit = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.largeImages = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            this.dockManager = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.panelContainer1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smallImages)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.largeImages)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager)).BeginInit();
+            this.dockPanel1.SuspendLayout();
+            this.panelContainer1.SuspendLayout();
+            this.dockPanel2.SuspendLayout();
+            this.dockPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ribbon
+            // mainRibbon
             // 
-            this.ribbon.ExpandCollapseItem.Id = 0;
-            this.ribbon.ExpandCollapseItem.Name = "";
-            this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbon.ExpandCollapseItem,
+            this.mainRibbon.ExpandCollapseItem.Id = 0;
+            this.mainRibbon.ExpandCollapseItem.Name = "";
+            this.mainRibbon.Images = this.smallImages;
+            this.mainRibbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.mainRibbon.ExpandCollapseItem,
             this.barStaticItem1,
-            this.iExit});
-            this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 3;
-            this.ribbon.Name = "ribbon";
-            this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.iExit,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5});
+            this.mainRibbon.LargeImages = this.largeImages;
+            this.mainRibbon.Location = new System.Drawing.Point(0, 0);
+            this.mainRibbon.MaxItemId = 8;
+            this.mainRibbon.Name = "mainRibbon";
+            this.mainRibbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbon.Size = new System.Drawing.Size(442, 147);
-            this.ribbon.StatusBar = this.ribbonStatusBar;
+            this.mainRibbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
+            this.mainRibbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.mainRibbon.Size = new System.Drawing.Size(738, 147);
+            this.mainRibbon.StatusBar = this.ribbonStatusBar;
+            this.mainRibbon.TransparentEditors = true;
+            // 
+            // smallImages
+            // 
+            this.smallImages.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("smallImages.ImageStream")));
+            this.smallImages.InsertImage(global::ArkEditor2.Properties.Resources.new_16x16, "new_16x16", typeof(global::ArkEditor2.Properties.Resources), 0);
+            this.smallImages.Images.SetKeyName(0, "new_16x16");
+            this.smallImages.InsertImage(global::ArkEditor2.Properties.Resources.Open_16x16, "Open_16x16", typeof(global::ArkEditor2.Properties.Resources), 1);
+            this.smallImages.Images.SetKeyName(1, "Open_16x16");
+            this.smallImages.InsertImage(global::ArkEditor2.Properties.Resources.Save_16x16, "Save_16x16", typeof(global::ArkEditor2.Properties.Resources), 2);
+            this.smallImages.Images.SetKeyName(2, "Save_16x16");
+            this.smallImages.InsertImage(global::ArkEditor2.Properties.Resources.SaveAll_16x16, "SaveAll_16x16", typeof(global::ArkEditor2.Properties.Resources), 3);
+            this.smallImages.Images.SetKeyName(3, "SaveAll_16x16");
+            this.smallImages.InsertImage(global::ArkEditor2.Properties.Resources.CloseFolder_16x16, "CloseFolder_16x16", typeof(global::ArkEditor2.Properties.Resources), 4);
+            this.smallImages.Images.SetKeyName(4, "CloseFolder_16x16");
+            this.smallImages.InsertImage(global::ArkEditor2.Properties.Resources.Palette_16x16, "Palette_16x16", typeof(global::ArkEditor2.Properties.Resources), 5);
+            this.smallImages.Images.SetKeyName(5, "Palette_16x16");
             // 
             // barStaticItem1
             // 
@@ -72,12 +120,79 @@
             this.iExit.Name = "iExit";
             this.iExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Close_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "New";
+            this.barButtonItem1.Id = 3;
+            this.barButtonItem1.ImageIndex = 0;
+            this.barButtonItem1.LargeImageIndex = 0;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Open";
+            this.barButtonItem2.Id = 4;
+            this.barButtonItem2.ImageIndex = 1;
+            this.barButtonItem2.LargeImageIndex = 1;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Close";
+            this.barButtonItem3.Id = 5;
+            this.barButtonItem3.ImageIndex = 4;
+            this.barButtonItem3.LargeImageIndex = 4;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Save";
+            this.barButtonItem4.Id = 6;
+            this.barButtonItem4.ImageIndex = 2;
+            this.barButtonItem4.LargeImageIndex = 2;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Save as";
+            this.barButtonItem5.Id = 7;
+            this.barButtonItem5.ImageIndex = 3;
+            this.barButtonItem5.LargeImageIndex = 3;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // largeImages
+            // 
+            this.largeImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.largeImages.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("largeImages.ImageStream")));
+            this.largeImages.InsertImage(global::ArkEditor2.Properties.Resources.new_32x32, "new_32x32", typeof(global::ArkEditor2.Properties.Resources), 0);
+            this.largeImages.Images.SetKeyName(0, "new_32x32");
+            this.largeImages.InsertImage(global::ArkEditor2.Properties.Resources.Open_32x32, "Open_32x32", typeof(global::ArkEditor2.Properties.Resources), 1);
+            this.largeImages.Images.SetKeyName(1, "Open_32x32");
+            this.largeImages.InsertImage(global::ArkEditor2.Properties.Resources.Save_32x32, "Save_32x32", typeof(global::ArkEditor2.Properties.Resources), 2);
+            this.largeImages.Images.SetKeyName(2, "Save_32x32");
+            this.largeImages.InsertImage(global::ArkEditor2.Properties.Resources.SaveAll_32x32, "SaveAll_32x32", typeof(global::ArkEditor2.Properties.Resources), 3);
+            this.largeImages.Images.SetKeyName(3, "SaveAll_32x32");
+            this.largeImages.InsertImage(global::ArkEditor2.Properties.Resources.CloseFolder_32x32, "CloseFolder_32x32", typeof(global::ArkEditor2.Properties.Resources), 4);
+            this.largeImages.Images.SetKeyName(4, "CloseFolder_32x32");
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup2,
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Fx Editor";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4, true);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.ShowCaptionButton = false;
+            this.ribbonPageGroup2.Text = "File";
             // 
             // ribbonPageGroup1
             // 
@@ -89,35 +204,150 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem1);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 418);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 515);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(442, 31);
+            this.ribbonStatusBar.Ribbon = this.mainRibbon;
+            this.ribbonStatusBar.Size = new System.Drawing.Size(738, 31);
+            // 
+            // dockManager
+            // 
+            this.dockManager.Form = this;
+            this.dockManager.Images = this.smallImages;
+            this.dockManager.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanel1,
+            this.panelContainer1});
+            this.dockManager.TopZIndexControls.AddRange(new string[] {
+            "DevExpress.XtraBars.BarDockControl",
+            "DevExpress.XtraBars.StandaloneBarDockControl",
+            "System.Windows.Forms.StatusBar",
+            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
+            "DevExpress.XtraBars.Ribbon.RibbonControl"});
+            // 
+            // dockPanel1
+            // 
+            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
+            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockPanel1.ID = new System.Guid("71114482-f229-4be3-842d-1f1af89c157e");
+            this.dockPanel1.ImageIndex = 5;
+            this.dockPanel1.Location = new System.Drawing.Point(562, 147);
+            this.dockPanel1.Name = "dockPanel1";
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(176, 200);
+            this.dockPanel1.Size = new System.Drawing.Size(176, 368);
+            this.dockPanel1.Text = "Settings";
+            // 
+            // dockPanel1_Container
+            // 
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel1_Container.Name = "dockPanel1_Container";
+            this.dockPanel1_Container.Size = new System.Drawing.Size(168, 341);
+            this.dockPanel1_Container.TabIndex = 0;
+            // 
+            // panelContainer1
+            // 
+            this.panelContainer1.ActiveChild = this.dockPanel2;
+            this.panelContainer1.Controls.Add(this.dockPanel2);
+            this.panelContainer1.Controls.Add(this.dockPanel3);
+            this.panelContainer1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.panelContainer1.FloatVertical = true;
+            this.panelContainer1.ID = new System.Guid("f3b518da-9645-4baa-b6e9-a26dfb28f692");
+            this.panelContainer1.ImageIndex = 5;
+            this.panelContainer1.Location = new System.Drawing.Point(0, 367);
+            this.panelContainer1.Name = "panelContainer1";
+            this.panelContainer1.OriginalSize = new System.Drawing.Size(200, 148);
+            this.panelContainer1.Size = new System.Drawing.Size(562, 148);
+            this.panelContainer1.Tabbed = true;
+            this.panelContainer1.Text = "panelContainer1";
+            // 
+            // dockPanel2
+            // 
+            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
+            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dockPanel2.FloatVertical = true;
+            this.dockPanel2.ID = new System.Guid("3641e904-815e-4bba-82b9-d3f2857a094c");
+            this.dockPanel2.ImageIndex = 5;
+            this.dockPanel2.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel2.Name = "dockPanel2";
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanel2.Size = new System.Drawing.Size(554, 93);
+            this.dockPanel2.Text = "TimeLine";
+            // 
+            // dockPanel2_Container
+            // 
+            this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel2_Container.Name = "dockPanel2_Container";
+            this.dockPanel2_Container.Size = new System.Drawing.Size(554, 93);
+            this.dockPanel2_Container.TabIndex = 0;
+            // 
+            // dockPanel3
+            // 
+            this.dockPanel3.Controls.Add(this.dockPanel3_Container);
+            this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dockPanel3.FloatVertical = true;
+            this.dockPanel3.ID = new System.Guid("b67bdf8e-3f8a-4dad-920c-5490159bf479");
+            this.dockPanel3.ImageIndex = 5;
+            this.dockPanel3.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel3.Name = "dockPanel3";
+            this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanel3.Size = new System.Drawing.Size(554, 93);
+            this.dockPanel3.Text = "Channel";
+            // 
+            // dockPanel3_Container
+            // 
+            this.dockPanel3_Container.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel3_Container.Name = "dockPanel3_Container";
+            this.dockPanel3_Container.Size = new System.Drawing.Size(554, 93);
+            this.dockPanel3_Container.TabIndex = 0;
             // 
             // FxEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 449);
+            this.ClientSize = new System.Drawing.Size(738, 546);
+            this.Controls.Add(this.panelContainer1);
+            this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.ribbonStatusBar);
-            this.Controls.Add(this.ribbon);
+            this.Controls.Add(this.mainRibbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FxEditor";
-            this.Ribbon = this.ribbon;
+            this.Ribbon = this.mainRibbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Fx Editor";
-            ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            this.Load += new System.EventHandler(this.FxEditor_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smallImages)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.largeImages)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
+            this.dockPanel1.ResumeLayout(false);
+            this.panelContainer1.ResumeLayout(false);
+            this.dockPanel2.ResumeLayout(false);
+            this.dockPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
+        private DevExpress.XtraBars.Ribbon.RibbonControl mainRibbon;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.BarButtonItem iExit;
+        private DevExpress.XtraBars.Docking.DockManager dockManager;
+        private DevExpress.XtraBars.Docking.DockPanel panelContainer1;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel3;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel3_Container;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
+        private DevExpress.Utils.ImageCollection smallImages;
+        private DevExpress.Utils.ImageCollection largeImages;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }
