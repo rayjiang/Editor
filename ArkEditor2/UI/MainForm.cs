@@ -10,6 +10,7 @@ using DevExpress.XtraBars;
 using DevExpress.XtraBars.Docking;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Helpers;
+using DevExpress.XtraSplashScreen;
 using DevExpress.XtraBars.Docking2010.Views;
 
 namespace ArkEditor2.UI
@@ -20,10 +21,20 @@ namespace ArkEditor2.UI
         private BaseDocument m_config;
         private BaseDocument m_revisionLog;
         private SceneEditor m_sceneEditor;
+        private FxEditor m_fxEditor;
+        private SceneWalker m_sceneWalker;
 
         public MainForm()
         {
+            UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
+            
             InitializeComponent();
+
+            // workaround for maximized RibbonForm
+            dockManager.ForceInitialize();
+            mainRibbon.ForceInitialize();
+            mainRibbon.Manager.DockManager = dockManager;
+
             InitSkinGallery();
         }
 
@@ -51,11 +62,11 @@ namespace ArkEditor2.UI
             tabbedView.BeginUpdate();
 
             // Add document
-            AddStartPageDocument();
+            //AddStartPageDocument();
             //AddConfigDocument();
             //AddRevisionLogDocument();
 
-            tabbedView.Controller.Activate(m_startPage);
+            //tabbedView.Controller.Activate(m_startPage);
             tabbedView.EndUpdate();
         }
 
@@ -153,26 +164,84 @@ namespace ArkEditor2.UI
 
         private void Module_GalleryItemClick(object sender, GalleryItemClickEventArgs e)
         {
-            if (m_sceneEditor == null || m_sceneEditor.IsDisposed)
+            if (string.Compare(e.Item.Caption, "Scene Editor", true) == 0)
             {
-                m_sceneEditor = new SceneEditor();
-                m_sceneEditor.DockToMainForm(dockManager);
-                m_sceneEditor.Text = "Scene Editor";
-                m_sceneEditor.MdiParent = this;
-                m_sceneEditor.Show();
+                if (m_sceneEditor == null || m_sceneEditor.IsDisposed)
+                {
+                    SplashScreenManager.ShowForm(typeof(ModuleWaitForm));
+
+                    m_sceneEditor = new SceneEditor();
+                    m_sceneEditor.DockToMainForm(dockManager);
+                    m_sceneEditor.Text = "Scene Editor";
+                    m_sceneEditor.MdiParent = this;
+                    m_sceneEditor.Show();
+
+                    SplashScreenManager.CloseForm();
+                }
+                else
+                {
+                    BaseDocument doc = documentManager.GetDocument(m_sceneEditor);
+                    tabbedView.Controller.Activate(doc);
+                }
             }
-            else
+            else if (string.Compare(e.Item.Caption, "Fx Editor", true) == 0)
             {
-                BaseDocument doc = documentManager.GetDocument(m_sceneEditor);
-                tabbedView.Controller.Activate(doc);    
+                if (m_fxEditor == null || m_fxEditor.IsDisposed)
+                {
+                    SplashScreenManager.ShowForm(typeof(ModuleWaitForm));
+                    System.Threading.Thread.Sleep(500);
+
+                    m_fxEditor = new FxEditor();
+                    m_fxEditor.Text = "Fx Editor";
+                    //m_fxEditor.MdiParent = this;
+                    m_fxEditor.Show();
+
+                    SplashScreenManager.CloseForm();
+                }
+                else
+                {
+                    m_fxEditor.Activate();
+                }
+            }
+            else if (string.Compare(e.Item.Caption, "Scene Walker", true) == 0)
+            {
+                if (m_sceneWalker == null || m_sceneWalker.IsDisposed)
+                {
+                    SplashScreenManager.ShowForm(typeof(ModuleWaitForm));
+                    System.Threading.Thread.Sleep(500);
+
+                    m_sceneWalker = new SceneWalker();
+                    m_sceneWalker.Text = "Scene Walker";
+                    m_sceneWalker.MdiParent = this;
+                    m_sceneWalker.Show();
+
+                    SplashScreenManager.CloseForm();
+                }
+                else
+                {
+                    BaseDocument doc = documentManager.GetDocument(m_sceneWalker);
+                    tabbedView.Controller.Activate(doc);
+                }
             }
         }
 
         private void MainRibbon_Merge(object sender, RibbonMergeEventArgs e)
         {
             RibbonControl main = sender as RibbonControl;
+            RibbonControl child = e.MergedChild;
+
             if (e.MergedChild.Pages.Count > 0)
-                main.SelectedPage = e.MergedChild.Pages[0];
+                main.SelectedPage = child.Pages[0];
+
+            // merge status bar
+            main.StatusBar.MergeStatusBar(child.StatusBar);
+        }
+
+        private void MainRibbon_UnMerge(object sender, RibbonMergeEventArgs e)
+        {
+            // un-merge status bar
+            RibbonControl main = sender as RibbonControl;
+            main.StatusBar.UnMergeStatusBar();
         }
 
     }

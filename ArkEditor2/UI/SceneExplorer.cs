@@ -15,5 +15,10 @@ namespace ArkEditor2.UI
         {
             InitializeComponent();
         }
+
+        private void SceneExplorer_Load(object sender, EventArgs e)
+        {
+            treeList1.ExpandAll();
+        }
     }
 }

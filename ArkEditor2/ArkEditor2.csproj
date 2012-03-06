@@ -62,6 +62,12 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FxEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FxEditor.Designer.cs">
+      <DependentUpon>FxEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ObjectProperty.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -85,6 +91,12 @@
     </Compile>
     <Compile Include="UI\SceneExplorer.Designer.cs">
       <DependentUpon>SceneExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SceneWalker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SceneWalker.Designer.cs">
+      <DependentUpon>SceneWalker.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\StartupSplashScreen.cs">
       <SubType>Form</SubType>
@@ -110,6 +122,12 @@
     <Compile Include="UI\Config.Designer.cs">
       <DependentUpon>Config.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ModuleWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ModuleWaitForm.Designer.cs">
+      <DependentUpon>ModuleWaitForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -124,6 +142,9 @@
     <EmbeddedResource Include="UI\Config.resx">
       <DependentUpon>Config.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\FxEditor.resx">
+      <DependentUpon>FxEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ObjectProperty.resx">
       <DependentUpon>ObjectProperty.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +157,9 @@
     <EmbeddedResource Include="UI\SceneExplorer.resx">
       <DependentUpon>SceneExplorer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\SceneWalker.resx">
+      <DependentUpon>SceneWalker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\StartupSplashScreen.resx">
       <DependentUpon>StartupSplashScreen.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -145,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\StartPage.resx">
       <DependentUpon>StartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ModuleWaitForm.resx">
+      <DependentUpon>ModuleWaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
@@ -160,6 +187,52 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="app.ico" />
+    <None Include="Images\Open_32x32.png" />
+    <None Include="Images\Open_16x16.png" />
+    <None Include="Images\Export2_32x32.png" />
+    <None Include="Images\Export2_16x16.png" />
+    <None Include="Images\SaveAll_32x32.png" />
+    <None Include="Images\SaveAll_16x16.png" />
+    <None Include="Images\Material_16x16.png" />
+    <None Include="Images\Views_32x32.png" />
+    <None Include="Images\Views_16x16.png" />
+    <None Include="Images\Undo_32x32.png" />
+    <None Include="Images\Undo_16x16.png" />
+    <None Include="Images\SelectAll_32x32.png" />
+    <None Include="Images\SelectAll_16x16.png" />
+    <None Include="Images\SaveAs_32x32.png" />
+    <None Include="Images\SaveAs_16x16.png" />
+    <None Include="Images\Save_32x32.png" />
+    <None Include="Images\Save_16x16.png" />
+    <None Include="Images\Remove_32x32.png" />
+    <None Include="Images\Remove_16x16.png" />
+    <None Include="Images\Refresh_32x32.png" />
+    <None Include="Images\Refresh_16x16.png" />
+    <None Include="Images\Redo_32x32.png" />
+    <None Include="Images\Redo_16x16.png" />
+    <None Include="Images\paste-32x32.png" />
+    <None Include="Images\paste-16x16.png" />
+    <None Include="Images\Other_32x32.png" />
+    <None Include="Images\Other_16x16.png" />
+    <None Include="Images\new-32x32.png" />
+    <None Include="Images\new-16x16.png" />
+    <None Include="Images\LayoutRotate_16x16.png" />
+    <None Include="Images\LayoutOptions_32x32.png" />
+    <None Include="Images\Forward_32x32.png" />
+    <None Include="Images\Forward_16x16.png" />
+    <None Include="Images\Folder_32x32.png" />
+    <None Include="Images\Folder_16x16.png" />
+    <None Include="Images\find-16x16.png" />
+    <None Include="Images\Find_32x32.png" />
+    <None Include="Images\Filter_16x16.png" />
+    <None Include="Images\Export_32x32.png" />
+    <None Include="Images\Export_16x16.png" />
+    <None Include="Images\Edit_32x32.png" />
+    <None Include="Images\Edit_16x16.png" />
+    <None Include="Images\Cut_32x32.png" />
+    <None Include="Images\Cut_16x16.png" />
+    <None Include="Images\Copy_32x32.png" />
+    <None Include="Images\Copy_16x16.png" />
     <None Include="Images\Wizard_32x32.png" />
     <None Include="Images\Wizard_16x16.png" />
     <None Include="Images\Palette_32x32.png" />
@@ -168,7 +241,6 @@
     <None Include="Images\Monitor_16x16.png" />
     <None Include="Images\Filter_32x32.png" />
     <None Include="Images\SimplePad_24x24.png" />
-    <None Include="Images\SimplePad.png" />
     <None Include="Images\Start_32x32.png" />
     <None Include="Images\Zip_32x32.png" />
     <None Include="Images\Walker_32x32.png" />
@@ -198,6 +270,27 @@
     <None Include="Images\Actor_16x16.png" />
     <None Include="Images\Actor_32x32.png" />
     <None Include="Images\Browser_32x32.png" />
+    <Content Include="Icons\Fx.ico" />
+    <Content Include="Icons\Scene.ico" />
+    <Content Include="Icons\Walker.ico" />
+    <None Include="Images\AddFile_16x16.png" />
+    <None Include="Images\AddFile_32x32.png" />
+    <None Include="Images\AddFolder_16x16.png" />
+    <None Include="Images\AddFolder_32x32.png" />
+    <None Include="Images\AddToLibrary_16x16.png" />
+    <None Include="Images\AddToLibrary_32x32.png" />
+    <None Include="Images\Back_16x16.png" />
+    <None Include="Images\Back_32x32.png" />
+    <None Include="Images\Cancel_16x16.png" />
+    <None Include="Images\Cancel_32x32.png" />
+    <None Include="Images\Code_Central.png" />
+    <None Include="Images\Clone_16x16.png" />
+    <None Include="Images\Clone_32x32.png" />
+    <None Include="Images\CloseFolder_16x16.png" />
+    <None Include="Images\CloseFolder_32x32.png" />
+    <None Include="Images\Camera_16x16.png" />
+    <None Include="Images\Camera_32x32.png" />
+    <None Include="Images\Camera1_32x32.png" />
     <Content Include="Images\CompanyLogo.png" />
     <None Include="Images\CompanyLogo_en.png" />
     <Content Include="Images\Config_16x16.png" />

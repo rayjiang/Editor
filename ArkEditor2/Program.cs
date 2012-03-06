@@ -15,12 +15,11 @@ namespace ArkEditor2
         [STAThread]
         static void Main()
         {
+            DevExpress.UserSkins.BonusSkins.Register();
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            DevExpress.Skins.SkinManager.EnableFormSkins();
-            DevExpress.UserSkins.BonusSkins.Register();
-            UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
 
             Application.Run(new MainForm());
         }

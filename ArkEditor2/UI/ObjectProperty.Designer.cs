@@ -37,7 +37,7 @@
             this.propertyGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGridControl1.Location = new System.Drawing.Point(0, 0);
             this.propertyGridControl1.Name = "propertyGridControl1";
-            this.propertyGridControl1.Size = new System.Drawing.Size(200, 400);
+            this.propertyGridControl1.Size = new System.Drawing.Size(260, 400);
             this.propertyGridControl1.TabIndex = 0;
             // 
             // ObjectProperty
@@ -46,7 +46,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.propertyGridControl1);
             this.Name = "ObjectProperty";
-            this.Size = new System.Drawing.Size(200, 400);
+            this.Size = new System.Drawing.Size(260, 400);
+            this.Load += new System.EventHandler(this.ObjectProperty_Load);
             ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl1)).EndInit();
             this.ResumeLayout(false);
 

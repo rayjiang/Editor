@@ -34,11 +34,15 @@ namespace ArkEditor2.UI
             m_plExplorer = dockManager.AddPanel(DockingStyle.Float);
             m_plExplorer.Text = "Scene Explorer";
             m_plExplorer.ControlContainer.Controls.Add(sceneExplorer);
+            m_plExplorer.Size = new Size(230, 400);
+            m_plExplorer.ImageIndex = 14;
             m_plExplorer.DockTo(DockingStyle.Left, 0);
 
             m_plProperty = dockManager.AddPanel(DockingStyle.Float);
             m_plProperty.Text = "Object Property";
             m_plProperty.ControlContainer.Controls.Add(objProperty);
+            m_plProperty.Size = new Size(260, 400);
+            m_plProperty.ImageIndex = 0;
             m_plProperty.DockTo(DockingStyle.Right, 0);
         }
 

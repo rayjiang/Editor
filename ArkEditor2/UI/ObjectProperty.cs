@@ -15,5 +15,10 @@ namespace ArkEditor2.UI
         {
             InitializeComponent();
         }
+
+        private void ObjectProperty_Load(object sender, EventArgs e)
+        {
+            propertyGridControl1.SelectedObject = this;
+        }
     }
 }

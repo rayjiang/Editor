@@ -88,9 +88,121 @@ namespace ArkEditor2.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap AddFile_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("AddFile_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AddFile_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("AddFile_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AddFolder_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("AddFolder_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AddFolder_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("AddFolder_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AddFolder_32x321 {
+            get {
+                object obj = ResourceManager.GetObject("AddFolder_32x321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AddToLibrary_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("AddToLibrary_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AddToLibrary_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("AddToLibrary_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Back_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Back_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Back_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Back_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Browser_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Browser_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Camera_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Camera_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Camera_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Camera_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Camera1_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Camera1_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Cancel_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Cancel_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Cancel_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Cancel_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Clone_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Clone_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Clone_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Clone_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,6 +217,27 @@ namespace ArkEditor2.Properties {
         internal static System.Drawing.Bitmap Close_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Close_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap CloseFolder_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("CloseFolder_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap CloseFolder_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("CloseFolder_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Code_Central {
+            get {
+                object obj = ResourceManager.GetObject("Code_Central", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -137,6 +270,34 @@ namespace ArkEditor2.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Copy_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Copy_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Copy_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Copy_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Cut_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Cut_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Cut_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Cut_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap CutScene_32x32 {
             get {
                 object obj = ResourceManager.GetObject("CutScene_32x32", resourceCulture);
@@ -144,9 +305,100 @@ namespace ArkEditor2.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Edit_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Edit_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Edit_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Edit_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Export_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Export_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Export_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Export_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Export2_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Export2_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Export2_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Export2_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Filter_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Filter_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Filter_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Filter_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap find_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("find_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Find_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Find_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Folder_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Folder_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Folder_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Folder_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Forward_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Forward_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Forward_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Forward_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +438,20 @@ namespace ArkEditor2.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap LayoutOptions_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("LayoutOptions_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap LayoutRotate_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("LayoutRotate_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Log_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Log_16x16", resourceCulture);
@@ -196,6 +462,13 @@ namespace ArkEditor2.Properties {
         internal static System.Drawing.Bitmap Log_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Log_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Material_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Material_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -235,6 +508,48 @@ namespace ArkEditor2.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap new_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("new_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap new_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("new_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Open_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Open_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Open_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Open_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Other_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Other_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Other_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Other_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Palette_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Palette_16x16", resourceCulture);
@@ -245,6 +560,20 @@ namespace ArkEditor2.Properties {
         internal static System.Drawing.Bitmap Palette_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Palette_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap paste_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("paste_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap paste_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("paste_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -270,6 +599,90 @@ namespace ArkEditor2.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Redo_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Redo_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Redo_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Redo_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Refresh_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Refresh_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Refresh_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Refresh_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Remove_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Remove_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Remove_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Remove_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Save_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Save_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Save_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Save_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap SaveAll_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("SaveAll_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap SaveAll_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("SaveAll_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap SaveAs_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("SaveAs_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap SaveAs_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("SaveAs_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Scene_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Scene_16x16", resourceCulture);
@@ -284,9 +697,30 @@ namespace ArkEditor2.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap SelectAll_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("SelectAll_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap SelectAll_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("SelectAll_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap SimplePad_24x24 {
             get {
                 object obj = ResourceManager.GetObject("SimplePad_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Start_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Start_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -308,6 +742,34 @@ namespace ArkEditor2.Properties {
         internal static System.Drawing.Bitmap Tool_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Tool_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Undo_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Undo_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Undo_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Undo_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Views_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Views_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Views_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Views_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

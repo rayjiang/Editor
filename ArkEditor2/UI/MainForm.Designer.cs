@@ -57,6 +57,9 @@
             this.moduleGallery = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
             this.iTools = new DevExpress.XtraBars.BarButtonItem();
             this.toolGallery = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
+            this.sInfo = new DevExpress.XtraBars.BarStaticItem();
+            this.progressItem = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
             this.ribbonLargeImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.homeRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.navigationPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -79,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleGallery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolGallery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonLargeImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
@@ -124,10 +128,12 @@
             this.iOutput,
             this.iStartPage,
             this.iMudoles,
-            this.iTools});
+            this.iTools,
+            this.sInfo,
+            this.progressItem});
             this.mainRibbon.LargeImages = this.ribbonLargeImageCollection;
             this.mainRibbon.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbon.MaxItemId = 37;
+            this.mainRibbon.MaxItemId = 39;
             this.mainRibbon.Name = "mainRibbon";
             this.mainRibbon.PageHeaderItemLinks.Add(this.iHelp);
             this.mainRibbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -135,12 +141,14 @@
             this.mainRibbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1,
             this.repositoryItemComboBox2,
-            this.repositoryItemCheckEdit1});
+            this.repositoryItemCheckEdit1,
+            this.repositoryItemProgressBar1});
             this.mainRibbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.mainRibbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.mainRibbon.Size = new System.Drawing.Size(1014, 147);
             this.mainRibbon.StatusBar = this.ribbonStatusBar;
             this.mainRibbon.Merge += new DevExpress.XtraBars.Ribbon.RibbonMergeEventHandler(this.MainRibbon_Merge);
+            this.mainRibbon.UnMerge += new DevExpress.XtraBars.Ribbon.RibbonMergeEventHandler(this.MainRibbon_UnMerge);
             // 
             // ribbonImageCollection
             // 
@@ -401,6 +409,27 @@
             this.toolGallery.Name = "toolGallery";
             this.toolGallery.Ribbon = this.mainRibbon;
             // 
+            // sInfo
+            // 
+            this.sInfo.Caption = "Ready";
+            this.sInfo.Id = 37;
+            this.sInfo.Name = "sInfo";
+            this.sInfo.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // progressItem
+            // 
+            this.progressItem.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.progressItem.Caption = "Loading";
+            this.progressItem.Edit = this.repositoryItemProgressBar1;
+            this.progressItem.EditValue = 50;
+            this.progressItem.Id = 38;
+            this.progressItem.Name = "progressItem";
+            this.progressItem.Width = 200;
+            // 
+            // repositoryItemProgressBar1
+            // 
+            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
+            // 
             // ribbonLargeImageCollection
             // 
             this.ribbonLargeImageCollection.ImageSize = new System.Drawing.Size(32, 32);
@@ -537,6 +566,8 @@
             // 
             // ribbonStatusBar
             // 
+            this.ribbonStatusBar.ItemLinks.Add(this.sInfo);
+            this.ribbonStatusBar.ItemLinks.Add(this.progressItem, true);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 648);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.mainRibbon;
@@ -554,6 +585,10 @@
             this.documentManager.View = this.tabbedView;
             this.documentManager.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView});
+            // 
+            // tabbedView
+            // 
+            this.tabbedView.DocumentProperties.UseFormIconAsDocumentImage = true;
             // 
             // dockManager
             // 
@@ -609,14 +644,15 @@
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Ribbon = this.mainRibbon;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Ark Editor 2.0";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleGallery)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolGallery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonLargeImageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
@@ -676,5 +712,8 @@
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraEditors.MemoEdit memoEdit1;
         private DevExpress.XtraBars.Docking.DockManager dockManager;
+        private DevExpress.XtraBars.BarStaticItem sInfo;
+        private DevExpress.XtraBars.BarEditItem progressItem;
+        private DevExpress.XtraEditors.Repository.RepositoryItemProgressBar repositoryItemProgressBar1;
     }
 }
