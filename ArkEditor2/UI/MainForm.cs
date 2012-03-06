@@ -19,6 +19,7 @@ namespace ArkEditor2.UI
         private BaseDocument m_startPage;
         private BaseDocument m_config;
         private BaseDocument m_revisionLog;
+        private SceneEditor m_sceneEditor;
 
         public MainForm()
         {
@@ -152,11 +153,19 @@ namespace ArkEditor2.UI
 
         private void Module_GalleryItemClick(object sender, GalleryItemClickEventArgs e)
         {
-            SceneEditor sceneEditor = new SceneEditor();
-            sceneEditor.DockToMainForm(dockManager);
-            sceneEditor.Text = "Scene Editor";
-            sceneEditor.MdiParent = this;
-            sceneEditor.Show();
+            if (m_sceneEditor == null || m_sceneEditor.IsDisposed)
+            {
+                m_sceneEditor = new SceneEditor();
+                m_sceneEditor.DockToMainForm(dockManager);
+                m_sceneEditor.Text = "Scene Editor";
+                m_sceneEditor.MdiParent = this;
+                m_sceneEditor.Show();
+            }
+            else
+            {
+                BaseDocument doc = documentManager.GetDocument(m_sceneEditor);
+                tabbedView.Controller.Activate(doc);    
+            }
         }
 
         private void MainRibbon_Merge(object sender, RibbonMergeEventArgs e)
