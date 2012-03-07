@@ -44,22 +44,28 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.dockManager = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.m_dockManager = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dpSettings = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.ucSetting = new ArkEditor2.UI.FxSettings();
             this.panelContainer1 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dpTimeLine = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.ucTimeLine = new ArkEditor2.UI.FxTimeLine();
+            this.dpChannel = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.ucChannel = new ArkEditor2.UI.FxChannel();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallImages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.largeImages)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dockManager)).BeginInit();
-            this.dockPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dockManager)).BeginInit();
+            this.dpSettings.SuspendLayout();
+            this.dockPanel1_Container.SuspendLayout();
             this.panelContainer1.SuspendLayout();
-            this.dockPanel2.SuspendLayout();
-            this.dockPanel3.SuspendLayout();
+            this.dpTimeLine.SuspendLayout();
+            this.dockPanel2_Container.SuspendLayout();
+            this.dpChannel.SuspendLayout();
+            this.dockPanel3_Container.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainRibbon
@@ -209,44 +215,53 @@
             this.ribbonStatusBar.Ribbon = this.mainRibbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(738, 31);
             // 
-            // dockManager
+            // m_dockManager
             // 
-            this.dockManager.Form = this;
-            this.dockManager.Images = this.smallImages;
-            this.dockManager.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1,
+            this.m_dockManager.Form = this;
+            this.m_dockManager.Images = this.smallImages;
+            this.m_dockManager.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dpSettings,
             this.panelContainer1});
-            this.dockManager.TopZIndexControls.AddRange(new string[] {
+            this.m_dockManager.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
             "System.Windows.Forms.StatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonControl"});
             // 
-            // dockPanel1
+            // dpSettings
             // 
-            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
-            this.dockPanel1.ID = new System.Guid("71114482-f229-4be3-842d-1f1af89c157e");
-            this.dockPanel1.ImageIndex = 5;
-            this.dockPanel1.Location = new System.Drawing.Point(562, 147);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(176, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(176, 368);
-            this.dockPanel1.Text = "Settings";
+            this.dpSettings.Controls.Add(this.dockPanel1_Container);
+            this.dpSettings.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dpSettings.ID = new System.Guid("71114482-f229-4be3-842d-1f1af89c157e");
+            this.dpSettings.ImageIndex = 5;
+            this.dpSettings.Location = new System.Drawing.Point(562, 147);
+            this.dpSettings.Name = "dpSettings";
+            this.dpSettings.OriginalSize = new System.Drawing.Size(176, 200);
+            this.dpSettings.Size = new System.Drawing.Size(176, 368);
+            this.dpSettings.Text = "Settings";
             // 
             // dockPanel1_Container
             // 
+            this.dockPanel1_Container.Controls.Add(this.ucSetting);
             this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
             this.dockPanel1_Container.Size = new System.Drawing.Size(168, 341);
             this.dockPanel1_Container.TabIndex = 0;
             // 
+            // ucSetting
+            // 
+            this.ucSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucSetting.Location = new System.Drawing.Point(0, 0);
+            this.ucSetting.Name = "ucSetting";
+            this.ucSetting.Size = new System.Drawing.Size(168, 341);
+            this.ucSetting.TabIndex = 0;
+            // 
             // panelContainer1
             // 
-            this.panelContainer1.ActiveChild = this.dockPanel2;
-            this.panelContainer1.Controls.Add(this.dockPanel2);
-            this.panelContainer1.Controls.Add(this.dockPanel3);
+            this.panelContainer1.ActiveChild = this.dpTimeLine;
+            this.panelContainer1.Controls.Add(this.dpTimeLine);
+            this.panelContainer1.Controls.Add(this.dpChannel);
             this.panelContainer1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
             this.panelContainer1.FloatVertical = true;
             this.panelContainer1.ID = new System.Guid("f3b518da-9645-4baa-b6e9-a26dfb28f692");
@@ -258,45 +273,63 @@
             this.panelContainer1.Tabbed = true;
             this.panelContainer1.Text = "panelContainer1";
             // 
-            // dockPanel2
+            // dpTimeLine
             // 
-            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
-            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.dockPanel2.FloatVertical = true;
-            this.dockPanel2.ID = new System.Guid("3641e904-815e-4bba-82b9-d3f2857a094c");
-            this.dockPanel2.ImageIndex = 5;
-            this.dockPanel2.Location = new System.Drawing.Point(4, 23);
-            this.dockPanel2.Name = "dockPanel2";
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dockPanel2.Size = new System.Drawing.Size(554, 93);
-            this.dockPanel2.Text = "TimeLine";
+            this.dpTimeLine.Controls.Add(this.dockPanel2_Container);
+            this.dpTimeLine.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dpTimeLine.FloatVertical = true;
+            this.dpTimeLine.ID = new System.Guid("3641e904-815e-4bba-82b9-d3f2857a094c");
+            this.dpTimeLine.ImageIndex = 5;
+            this.dpTimeLine.Location = new System.Drawing.Point(4, 23);
+            this.dpTimeLine.Name = "dpTimeLine";
+            this.dpTimeLine.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dpTimeLine.Size = new System.Drawing.Size(554, 93);
+            this.dpTimeLine.Text = "TimeLine";
             // 
             // dockPanel2_Container
             // 
+            this.dockPanel2_Container.Controls.Add(this.ucTimeLine);
             this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
             this.dockPanel2_Container.Size = new System.Drawing.Size(554, 93);
             this.dockPanel2_Container.TabIndex = 0;
             // 
-            // dockPanel3
+            // ucTimeLine
             // 
-            this.dockPanel3.Controls.Add(this.dockPanel3_Container);
-            this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.dockPanel3.FloatVertical = true;
-            this.dockPanel3.ID = new System.Guid("b67bdf8e-3f8a-4dad-920c-5490159bf479");
-            this.dockPanel3.ImageIndex = 5;
-            this.dockPanel3.Location = new System.Drawing.Point(4, 23);
-            this.dockPanel3.Name = "dockPanel3";
-            this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dockPanel3.Size = new System.Drawing.Size(554, 93);
-            this.dockPanel3.Text = "Channel";
+            this.ucTimeLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTimeLine.Location = new System.Drawing.Point(0, 0);
+            this.ucTimeLine.Name = "ucTimeLine";
+            this.ucTimeLine.Size = new System.Drawing.Size(554, 93);
+            this.ucTimeLine.TabIndex = 0;
+            // 
+            // dpChannel
+            // 
+            this.dpChannel.Controls.Add(this.dockPanel3_Container);
+            this.dpChannel.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dpChannel.FloatVertical = true;
+            this.dpChannel.ID = new System.Guid("b67bdf8e-3f8a-4dad-920c-5490159bf479");
+            this.dpChannel.ImageIndex = 5;
+            this.dpChannel.Location = new System.Drawing.Point(4, 23);
+            this.dpChannel.Name = "dpChannel";
+            this.dpChannel.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dpChannel.Size = new System.Drawing.Size(554, 93);
+            this.dpChannel.Text = "Channel";
             // 
             // dockPanel3_Container
             // 
+            this.dockPanel3_Container.Controls.Add(this.ucChannel);
             this.dockPanel3_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel3_Container.Name = "dockPanel3_Container";
             this.dockPanel3_Container.Size = new System.Drawing.Size(554, 93);
             this.dockPanel3_Container.TabIndex = 0;
+            // 
+            // ucChannel
+            // 
+            this.ucChannel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucChannel.Location = new System.Drawing.Point(0, 0);
+            this.ucChannel.Name = "ucChannel";
+            this.ucChannel.Size = new System.Drawing.Size(554, 93);
+            this.ucChannel.TabIndex = 0;
             // 
             // FxEditor
             // 
@@ -304,7 +337,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 546);
             this.Controls.Add(this.panelContainer1);
-            this.Controls.Add(this.dockPanel1);
+            this.Controls.Add(this.dpSettings);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.mainRibbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -316,11 +349,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallImages)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.largeImages)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
-            this.dockPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_dockManager)).EndInit();
+            this.dpSettings.ResumeLayout(false);
+            this.dockPanel1_Container.ResumeLayout(false);
             this.panelContainer1.ResumeLayout(false);
-            this.dockPanel2.ResumeLayout(false);
-            this.dockPanel3.ResumeLayout(false);
+            this.dpTimeLine.ResumeLayout(false);
+            this.dockPanel2_Container.ResumeLayout(false);
+            this.dpChannel.ResumeLayout(false);
+            this.dockPanel3_Container.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -333,13 +369,13 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.BarButtonItem iExit;
-        private DevExpress.XtraBars.Docking.DockManager dockManager;
+        private DevExpress.XtraBars.Docking.DockManager m_dockManager;
         private DevExpress.XtraBars.Docking.DockPanel panelContainer1;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
+        private DevExpress.XtraBars.Docking.DockPanel dpTimeLine;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel3;
+        private DevExpress.XtraBars.Docking.DockPanel dpChannel;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel3_Container;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.DockPanel dpSettings;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.Utils.ImageCollection smallImages;
         private DevExpress.Utils.ImageCollection largeImages;
@@ -349,5 +385,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private FxChannel ucChannel;
+        private FxTimeLine ucTimeLine;
+        private FxSettings ucSetting;
     }
 }

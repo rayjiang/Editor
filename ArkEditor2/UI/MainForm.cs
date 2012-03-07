@@ -49,6 +49,15 @@ namespace ArkEditor2.UI
             pmSkins.ShowPopup(mainRibbon.Manager, MousePosition);
         }
 
+        void TabbedView_EndFloating(object sender, DocumentEventArgs e)
+        {
+            if (e.Document.Caption == "Fx Editor")
+            {
+                FxEditor fx = e.Document.Form as FxEditor;
+                fx.UndockFromMainForm();
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             // Merge Style
@@ -59,6 +68,7 @@ namespace ArkEditor2.UI
             InitToolsGallery(toolGallery.Gallery.Groups[0]);
 
             // Init Tabbed View
+            tabbedView.EndFloating += new DocumentEventHandler(TabbedView_EndFloating);
             tabbedView.BeginUpdate();
 
             // Add document
@@ -191,15 +201,19 @@ namespace ArkEditor2.UI
                     SplashScreenManager.ShowForm(typeof(ModuleWaitForm));
 
                     m_fxEditor = new FxEditor();
+                    m_fxEditor.DockToMainForm(dockManager);
                     m_fxEditor.Text = "Fx Editor";
-                    //m_fxEditor.MdiParent = this;
+                    m_fxEditor.MdiParent = this;
                     m_fxEditor.Show();
 
                     SplashScreenManager.CloseForm();
                 }
                 else
                 {
-                    m_fxEditor.Activate();
+                    BaseDocument doc = documentManager.GetDocument(m_fxEditor);
+                    tabbedView.Controller.Activate(doc);
+
+                    //m_fxEditor.Activate();
                 }
             }
             else if (string.Compare(e.Item.Caption, "Scene Walker", true) == 0)

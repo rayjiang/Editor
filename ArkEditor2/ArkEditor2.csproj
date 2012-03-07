@@ -62,11 +62,29 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FxChannel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\FxChannel.Designer.cs">
+      <DependentUpon>FxChannel.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FxEditor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\FxEditor.Designer.cs">
       <DependentUpon>FxEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FxSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\FxSettings.Designer.cs">
+      <DependentUpon>FxSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FxTimeLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\FxTimeLine.Designer.cs">
+      <DependentUpon>FxTimeLine.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ObjectProperty.cs">
       <SubType>UserControl</SubType>
@@ -142,8 +160,17 @@
     <EmbeddedResource Include="UI\Config.resx">
       <DependentUpon>Config.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\FxChannel.resx">
+      <DependentUpon>FxChannel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FxEditor.resx">
       <DependentUpon>FxEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FxSettings.resx">
+      <DependentUpon>FxSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FxTimeLine.resx">
+      <DependentUpon>FxTimeLine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ObjectProperty.resx">
       <DependentUpon>ObjectProperty.cs</DependentUpon>
