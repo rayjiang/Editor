@@ -56,6 +56,30 @@ namespace ArkEditor2.UI
                 FxEditor fx = e.Document.Form as FxEditor;
                 fx.UndockFromMainForm();
             }
+            else if (e.Document.Caption == "Scene Editor")
+            {
+                SceneEditor scene = e.Document.Form as SceneEditor;
+                scene.UndockFromMainForm();
+            }
+        }
+
+        void TabbedView_DocumentRemoved(object sender, DocumentEventArgs e)
+        {
+
+        }
+
+        void TabbedView_DocumentAdded(object sender, DocumentEventArgs e)
+        {
+            if (e.Document.Caption == "Fx Editor")
+            {
+                FxEditor fx = e.Document.Form as FxEditor;
+                fx.DockToMainForm(dockManager);
+            }
+            else if (e.Document.Caption == "Scene Editor")
+            {
+                SceneEditor scene = e.Document.Form as SceneEditor;
+                scene.DockToMainForm(dockManager);
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -68,6 +92,8 @@ namespace ArkEditor2.UI
             InitToolsGallery(toolGallery.Gallery.Groups[0]);
 
             // Init Tabbed View
+            tabbedView.DocumentAdded += new DocumentEventHandler(TabbedView_DocumentAdded);
+            tabbedView.DocumentRemoved += new DocumentEventHandler(TabbedView_DocumentRemoved);
             tabbedView.EndFloating += new DocumentEventHandler(TabbedView_EndFloating);
             tabbedView.BeginUpdate();
 
@@ -181,7 +207,6 @@ namespace ArkEditor2.UI
                     SplashScreenManager.ShowForm(typeof(ModuleWaitForm));
 
                     m_sceneEditor = new SceneEditor();
-                    m_sceneEditor.DockToMainForm(dockManager);
                     m_sceneEditor.Text = "Scene Editor";
                     m_sceneEditor.MdiParent = this;
                     m_sceneEditor.Show();
@@ -201,7 +226,6 @@ namespace ArkEditor2.UI
                     SplashScreenManager.ShowForm(typeof(ModuleWaitForm));
 
                     m_fxEditor = new FxEditor();
-                    m_fxEditor.DockToMainForm(dockManager);
                     m_fxEditor.Text = "Fx Editor";
                     m_fxEditor.MdiParent = this;
                     m_fxEditor.Show();

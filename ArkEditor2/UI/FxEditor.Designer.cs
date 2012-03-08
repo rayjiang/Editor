@@ -345,6 +345,7 @@
             this.Ribbon = this.mainRibbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Fx Editor";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FxEditor_Closed);
             this.Load += new System.EventHandler(this.FxEditor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallImages)).EndInit();
