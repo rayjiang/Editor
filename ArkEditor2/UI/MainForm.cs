@@ -17,6 +17,8 @@ namespace ArkEditor2.UI
 {
     public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private EditorFramework m_framework;
+
         private BaseDocument m_startPage;
         private BaseDocument m_config;
         private BaseDocument m_revisionLog;
@@ -26,6 +28,10 @@ namespace ArkEditor2.UI
 
         public MainForm()
         {
+            m_framework = new EditorFramework();
+            m_framework.Initialize();
+            m_framework.InitModules();
+
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
             
             InitializeComponent();
