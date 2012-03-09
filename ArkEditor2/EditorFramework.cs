@@ -11,22 +11,70 @@ namespace ArkEditor2
 {
     class EditorFramework
     {
-        [ImportMany]
-        IEnumerable<Lazy<IModule>> m_modules;
 
-        public void Initialize()
+#region Private Field
+
+        [ImportMany]
+        IEnumerable<Lazy<IModule>> ImportModules { get; set; }
+
+        Dictionary<string, IModule> m_moduleColletion = new Dictionary<string, IModule>();
+
+#endregion
+
+#region Constructors/Destructors
+
+        public EditorFramework()
+        {
+            Initialize();
+        }
+
+#endregion
+
+#region Private Functions
+
+        private void Initialize()
         {
             var catalog = new AggregateCatalog(new DirectoryCatalog("Modules"));
             var container = new CompositionContainer(catalog);
             container.ComposeParts(this);
-        }
 
-        public void InitModules()
-        {
-            foreach (Lazy<IModule> m in m_modules)
+            // get module interface
+            foreach (Lazy<IModule> m in ImportModules)
             {
-                //MessageBox.Show(m.Value.ModuleName);
+                m_moduleColletion.Add(m.Value.ModuleName, m.Value);
             }
         }
+
+#endregion
+
+#region Methods
+
+        public string[] GetModuleNames()
+        {
+            string[] names = new string[m_moduleColletion.Count];
+
+            int index = 0;
+            foreach (KeyValuePair<string, IModule> item in m_moduleColletion)
+            {
+                names[index++] = item.Key;
+            }
+
+            return names;
+        }
+
+        public IModule GetModuleInterface(string name)
+        {
+            try
+            {
+                return m_moduleColletion[name];
+            }
+            catch (System.Exception)
+            {
+                return null;
+            }
+        }
+
+#endregion
+
     }
 }

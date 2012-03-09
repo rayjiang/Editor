@@ -12,6 +12,7 @@ using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Helpers;
 using DevExpress.XtraSplashScreen;
 using DevExpress.XtraBars.Docking2010.Views;
+using ArkEditor2.Interface;
 
 namespace ArkEditor2.UI
 {
@@ -29,8 +30,6 @@ namespace ArkEditor2.UI
         public MainForm()
         {
             m_framework = new EditorFramework();
-            m_framework.Initialize();
-            m_framework.InitModules();
 
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
             
@@ -64,8 +63,8 @@ namespace ArkEditor2.UI
             }
             else if (e.Document.Caption == "Scene Editor")
             {
-                SceneEditor scene = e.Document.Form as SceneEditor;
-                scene.UndockFromMainForm();
+                //SceneEditor scene = e.Document.Form as SceneEditor;
+                //scene.UndockFromMainForm();
             }
         }
 
@@ -83,8 +82,8 @@ namespace ArkEditor2.UI
             }
             else if (e.Document.Caption == "Scene Editor")
             {
-                SceneEditor scene = e.Document.Form as SceneEditor;
-                scene.DockToMainForm(dockManager);
+                //SceneEditor scene = e.Document.Form as SceneEditor;
+                //scene.DockToMainForm(dockManager);
             }
         }
 
@@ -114,16 +113,15 @@ namespace ArkEditor2.UI
 
         private void InitModuleGallery(GalleryItemGroup groupDropDown)
         {
-            string[] moduleNames = {"Scene Editor", "Terrain Editor", "Character Editor", "Fx Editor", "Material Editor", "Cut Scene", "Path Finding", "Scene Walker"};
-            int[] moudleImageIdx = { 14, 15, 8, 11, 12, 10, 13, 16 };
-
-            for (int i = 0; i < moudleImageIdx.Length; i++)
+            string[] names = m_framework.GetModuleNames();
+            foreach (string name in names)
             {
+                IModule m = m_framework.GetModuleInterface(name);
                 GalleryItem item = new GalleryItem();
-                item.Caption = moduleNames[i];
-                //item.Description = moduleNames[i];
-                item.Image = ribbonLargeImageCollection.Images[moudleImageIdx[i]];
-                item.Hint = moduleNames[i];
+                item.Tag = m;
+                item.Caption = m.ModuleCaption;
+                item.Description = m.ModuleDescription;
+                item.Image = m.ModuleLargeGlyph;
                 item.HoverImage = item.Image;
                 groupDropDown.Items.Add(item);
             }
@@ -206,6 +204,26 @@ namespace ArkEditor2.UI
 
         private void Module_GalleryItemClick(object sender, GalleryItemClickEventArgs e)
         {
+            SplashScreenManager.ShowForm(typeof(ModuleWaitForm));
+
+            IModule m = e.Item.Tag as IModule;
+            BaseDocument doc = documentManager.GetDocument(m.ModuleForm);
+
+            if (doc == null)
+            {
+                m.ModuleForm.MdiParent = this;
+                m.ModuleForm.Show();
+            }
+            else
+            {
+                if (m.ModuleForm.WindowState == FormWindowState.Minimized)
+                    m.ModuleForm.WindowState = FormWindowState.Normal;
+                m.ModuleForm.Activate();
+            }
+
+            SplashScreenManager.CloseForm();
+
+            /*
             if (string.Compare(e.Item.Caption, "Scene Editor", true) == 0)
             {
                 if (m_sceneEditor == null || m_sceneEditor.IsDisposed)
@@ -265,6 +283,7 @@ namespace ArkEditor2.UI
                     tabbedView.Controller.Activate(doc);
                 }
             }
+             * */
         }
 
         private void MainRibbon_Merge(object sender, RibbonMergeEventArgs e)

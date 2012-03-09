@@ -59,5 +59,12 @@ namespace TerrainModule.Properties {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.Drawing.Bitmap TerrainModule {
+            get {
+                object obj = ResourceManager.GetObject("TerrainModule", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

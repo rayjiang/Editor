@@ -59,5 +59,12 @@ namespace SceneModule.Properties {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.Drawing.Bitmap SceneModule {
+            get {
+                object obj = ResourceManager.GetObject("SceneModule", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
